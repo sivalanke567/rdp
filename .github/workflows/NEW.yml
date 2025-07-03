@@ -25,9 +25,9 @@ jobs:
 
       - name: Activating RDP access
         run: |
-          Set-ItemProperty -Path 'HKLM:\System\CurrentControlSet\Control\Terminal Server' -name "fDenyTSConnections" -Value 0
+          Set-ItemProperty -Path 'HKLM:\System\CurrentControlSet\Control\Terminal Server' -Name "fDenyTSConnections" -Value 0
           Enable-NetFirewallRule -DisplayGroup "Remote Desktop"
-          Set-ItemProperty -Path 'HKLM:\System\CurrentControlSet\Control\Terminal Server\WinStations\RDP-Tcp' -name "UserAuthentication" -Value 1
+          Set-ItemProperty -Path 'HKLM:\System\CurrentControlSet\Control\Terminal Server\WinStations\RDP-Tcp' -Name "UserAuthentication" -Value 1
           copy wallpaper.jpg D:\a\wallpaper.jpg
           copy wallpaper.bat D:\a\wallpaper.bat
 
@@ -41,6 +41,7 @@ jobs:
         run: |
           Invoke-WebRequest https://raw.githubusercontent.com/30dayscoding/rdp/main/loop.ps1 -OutFile loop.ps1
           ./loop.ps1
+
 
 
 
